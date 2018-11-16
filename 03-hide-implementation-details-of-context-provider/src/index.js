@@ -8,13 +8,7 @@ import './index.css';
 function Root() {
   return (
     <UserConsumer>
-      {({ user }) =>
-        user ? (
-          <MainPage />
-        ) : (
-          <LoginPage onLogin={this.handleLogin} />
-        )
-      }
+      {({ user }) => (user ? <MainPage /> : <LoginPage />)}
     </UserConsumer>
   );
 }
