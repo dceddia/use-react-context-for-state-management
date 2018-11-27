@@ -1,0 +1,244 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  font-family: 'IBM Plex Sans';
+  font-size: 18px;
+  line-height: 1.3em;
+}
+input,
+button {
+  font-family: 'IBM Plex Sans';
+  font-size: 18px;
+}
+
+/*
+LoginPage styles
+*/
+
+.LoginPage {
+  margin-top: 100px;
+}
+.LoginPage form {
+  display: flex;
+  flex-direction: column;
+  max-width: 250px;
+  margin: 0 auto;
+}
+.LoginPage form label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1em;
+  font-weight: bold;
+}
+.LoginPage form input {
+  padding: 8px 6px;
+  border: 1px solid #aaa;
+  border-radius: 2px;
+}
+.LoginPage form input:focus {
+  outline: none;
+  border: 1px solid #3257ff;
+}
+.LoginPage form button {
+  background: #3257ff;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 3px;
+  box-shadow: 0 1px 2px #3257ff;
+  transition: box-shadow, background-color 0.12s;
+  outline: none;
+}
+.LoginPage form button:hover {
+  background-color: #1431b9;
+  cursor: pointer;
+}
+.LoginPage form button[disabled] {
+  opacity: 0.4;
+}
+.LoginPage form button:focus {
+  box-shadow: 0 1px 8px #3257ff;
+}
+.LoginPage form button:active {
+  transform: scale(0.98);
+}
+.LoginPage .error {
+  background: #ffebee;
+  color: #c62828;
+  padding: 5px;
+  font-size: 16px;
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+/* App Layout */
+main {
+  display: grid;
+  height: 100vh;
+  grid-template-areas:
+    'Header Header'
+    'MessageArea MessageArea';
+  grid-template-rows: 70px;
+  grid-template-columns: 250px;
+}
+.Header {
+  grid-area: Header;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px;
+}
+.MessageList {
+  grid-area: MessageArea;
+}
+.MessageViewer {
+  grid-area: MessageArea;
+}
+
+/* Header styles */
+.Header {
+  border-bottom: 1px solid #9eb2fb;
+  display: flex;
+}
+.Header .emails {
+  font-size: 0.8em;
+  opacity: 0.6;
+}
+.Header h2 {
+  margin: 0;
+  margin-bottom: 5px;
+  font-weight: 600;
+  font-size: 20px;
+  color: #44b;
+}
+.UserAvatar {
+  border-radius: 50%;
+  margin-top: -5px;
+}
+
+/* Message List styles */
+.MessageList {
+  padding: 10px;
+}
+.MessageList .no-messages {
+  text-align: center;
+  color: #999;
+  margin-top: 40px;
+}
+.MessageList ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.MessageList li {
+  padding: 10px 3px;
+  border-bottom: 1px solid #ccc;
+  cursor: pointer;
+  user-select: none;
+}
+.MessageList li:hover {
+  background: #f5f5f5;
+}
+.MessageList li:active {
+  transition: background 0.3s;
+  background: #ebefff;
+}
+.MessageList li .subject {
+  font-weight: 400;
+}
+.MessageList li .preview {
+  opacity: 0.6;
+  font-size: 0.8em;
+}
+
+/* Message View */
+.MessageViewer {
+  padding: 10px;
+}
+.MessageViewer h2 {
+  font-size: 1.3em;
+  padding-bottom: 7px;
+  border-bottom: 1px solid #ccc;
+}
+.MessageViewer button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #1a1ae8;
+  text-decoration: underline;
+  float: right;
+  font-size: 15px;
+}
+
+/* Menu Styles */
+.UserMenu {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.UserMenu ul {
+  font-size: 16px;
+  list-style: none;
+  position: absolute;
+  top: 35px;
+  right: 5px;
+  margin: 0;
+  padding: 5px 0;
+  background-color: #fff;
+  border-radius: 2px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+.UserMenu li {
+  cursor: pointer;
+  display: block;
+  padding: 3px 20px;
+}
+.UserMenu li:hover {
+  background-color: #e3eafd;
+}
+
+/* Notification styling */
+.notification-wrapper {
+  position: relative;
+}
+.notification-wrapper > ul {
+  position: absolute;
+  top: 10px;
+  right: 6px;
+  z-index: 1;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.notification-wrapper > ul > li {
+  position: relative;
+  background: #fff;
+  max-width: 300px;
+  display: flex;
+  padding: 10px;
+  padding-right: 30px;
+  border: 1px solid #ccc;
+  margin-bottom: 5px;
+  border-radius: 3px;
+}
+.notification-wrapper > ul > li > button {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  border: none;
+  border-radius: 50%;
+  background-color: #ccc;
+  line-height: 0;
+  width: 1em;
+  height: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  cursor: pointer;
+  outline: none;
+}
+.notification-wrapper > ul > li > button:hover {
+  background-color: #d32f2f;
+}
