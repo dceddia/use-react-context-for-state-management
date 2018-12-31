@@ -1,0 +1,148 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  font-family: 'IBM Plex Sans';
+  font-size: 18px;
+  line-height: 1.3em;
+}
+input,
+button {
+  font-family: 'IBM Plex Sans';
+  font-size: 18px;
+}
+
+/*
+LoginPage styles
+*/
+
+.LoginPage {
+  margin-top: 100px;
+}
+.LoginPage form {
+  display: flex;
+  flex-direction: column;
+  max-width: 250px;
+  margin: 0 auto;
+}
+.LoginPage form label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1em;
+  font-weight: bold;
+}
+.LoginPage form input {
+  padding: 8px 6px;
+  border: 1px solid #aaa;
+  border-radius: 2px;
+}
+.LoginPage form input:focus {
+  outline: none;
+  border: 1px solid #3257ff;
+}
+.LoginPage form button {
+  background: #3257ff;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 3px;
+  box-shadow: 0 1px 2px #3257ff;
+  transition: box-shadow, background-color 0.12s;
+  outline: none;
+}
+.LoginPage form button:hover {
+  background-color: #1431b9;
+  cursor: pointer;
+}
+.LoginPage form button[disabled] {
+  opacity: 0.4;
+}
+.LoginPage form button:focus {
+  box-shadow: 0 1px 8px #3257ff;
+}
+.LoginPage form button:active {
+  transform: scale(0.98);
+}
+.LoginPage .error {
+  background: #ffebee;
+  color: #c62828;
+  padding: 5px;
+  font-size: 16px;
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+/* App Layout */
+main {
+  display: grid;
+  height: 100vh;
+  grid-template-areas:
+    'Header Header'
+    'MessageList MessageList';
+  grid-template-rows: 49px;
+  grid-template-columns: 250px;
+}
+.Header {
+  grid-area: Header;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+}
+.MessageList {
+  grid-area: MessageList;
+}
+.MessageView {
+  grid-area: MessageView;
+}
+
+/* Header styles */
+.Header {
+  border-bottom: 1px solid #9eb2fb;
+}
+.Header h2 {
+  margin: 0;
+  font-weight: 600;
+  font-size: 20px;
+  color: #44b;
+}
+.UserAvatar {
+  border-radius: 50%;
+}
+
+/* Message List styles */
+.MessageList {
+  padding: 10px;
+}
+.MessageList .no-messages {
+  text-align: center;
+  color: #999;
+  margin-top: 40px;
+}
+
+/* Menu Styles */
+.UserMenu {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.UserMenu ul {
+  font-size: 16px;
+  list-style: none;
+  position: absolute;
+  top: 35px;
+  right: 5px;
+  margin: 0;
+  padding: 5px 0;
+  background-color: #fff;
+  border-radius: 2px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+.UserMenu li {
+  cursor: pointer;
+  display: block;
+  padding: 3px 20px;
+}
+.UserMenu li:hover {
+  background-color: #e3eafd;
+}
