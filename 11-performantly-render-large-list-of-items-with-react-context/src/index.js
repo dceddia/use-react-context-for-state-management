@@ -14,7 +14,7 @@ function Root() {
         user ? (
           <MainPage />
         ) : (
-          <LoginPage onLogin={this.handleLogin} />
+          <LoginPage />
         )
       }
     </UserConsumer>
